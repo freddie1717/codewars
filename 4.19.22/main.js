@@ -12,7 +12,7 @@ function areYouPlayingBanjo(name) {
         return name + " plays banjo"
     }
     else {
-        return name + " does not play banjo"
+        return name + " does not play banjo."
         ;
     }
   }
