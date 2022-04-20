@@ -9,7 +9,7 @@
  
 function areYouPlayingBanjo(name) {
     if (name.toLowerCase() === "r") {
-        return name + " plays banjo"
+        return name + " plays banjo!"
     }
     else {
         return name + " does not play banjo."
