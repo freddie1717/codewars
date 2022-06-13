@@ -21,18 +21,27 @@ function partsSums(ls) {
     //declare destination array
     let parts_sums = [];
 
-    //until original array is empty, run reduce and push sum to new array, then remove first item of original array
-  if (ls.length === 0) { 
+    //check for empty array
+    if (ls.length === 0) { 
     parts_sums.push(0);
     return parts_sums;
-  }
-  
-    while(ls.length > 0) {
-        parts_sums.push(ls.reduce((total, amount) => total + amount));
-        ls.shift();
     }
-  
-    parts_sums.push(0);
+
+    //subtract the value of the removed element from the previously calculated sum
+    
+    parts_sums.push(ls.reduce((total, amount) =>    total + amount));
+
+    for (let i = 0; i < ls.length; i++){
+        parts_sums.push(parts_sums[parts_sums.length-1] - ls[i]);
+    }
   
     return parts_sums;
 }
+
+//original way I tried but it timed out
+    // while(ls.length > 0) {
+    //     parts_sums.push(ls.reduce((total, amount) =>    total + amount));
+    //     ls.shift();
+    // }
+  
+    //parts_sums.push(0);
